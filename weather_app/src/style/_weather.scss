@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.grid-container {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    background-image: url(../img/sky-690293_1920.jpg);
+    .title-row {
+        .title-col {
+            display: flex;
+            justify-content: center;
+            color: #eeeeee;
+        }
+    }
+
+    .temperature-data__row {
+        .temperature-data__col{
+            display: flex;
+            justify-content: center;
+            .temperature-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                p {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    .form-row {
+        .form-col {
+            display: flex;
+            justify-content: center;
+            label {
+                color: #eeeeee;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            input {
+                display: block;
+                margin: 5px;
+                border: 1px solid grey;
+                background-color: grey;
+                height: 30px;
+                padding-left: 5px;
+            }
+            .btn {
+                background-color: grey;
+                width:80px;
+                height: 30px;
+                margin-left:35px;
+                padding:0;
+                color:#eeeeee;
+                font-size: 14px;
+                
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+$mainWidth: 100vw;
+$numberOfColumns: 10;
+$singleCol: $mainWidth / $numberOfColumns;
+
+@mixin clearfix(){
+    &:after, &:before{
+        content: "";
+        display: table;
+        clear: both;
+    }
+  }
+
+  .grid-container {
+    width: 100%;
+    max-width: $mainWidth;
+    margin: 0 auto;
+    
+    .row {
+      
+      @include clearfix();
+      @for $i from 1 through $numberOfColumns {
+        .col-#{$i} {
+          width: $singleCol * $i;
+          min-height: 1px;
+          float: left;
+          padding: 5px;
+          }
+        }
+      }
+    }
