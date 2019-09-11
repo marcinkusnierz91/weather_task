@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 
 class Weather extends Component {
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         let object = this.props
         let list = object.temperature;
         // console.log(list)
@@ -27,25 +27,31 @@ class Weather extends Component {
                 <>
                     <div className="col-2 temperature-info">
                         
-                            Minimalna temperatura
+                            <h4>Minimal temperature during the day</h4>
                             {this.props.temperature.map((minTemp, id) => <span key={id}>{Number(minTemp.main.temp_min).toFixed(0)} °C</span>)}
                         
                     </div>
                     <div className="col-2 temperature-info">
                         
-                            Maksymalna temperatura
+                            <h4>Maximal temperature during the day</h4>
                             {this.props.temperature.map((maxTemp, id) => <span key={id}>{Number(maxTemp.main.temp_max).toFixed(0)} °C</span>)}
                         
                     </div>
+                    <div className="col-2 temperature-info">
+                        
+                            <h4>Humidity during the day</h4>
+                            {this.props.temperature.map((maxTemp, id) => <span key={id}>{Number(maxTemp.main.humidity).toFixed(0)} %</span>)}
+                        
+                    </div>
                 
                 
-                    <div className="col-1 temperature-info">
-                        Średnia z najniższych temperatur<br/>
+                    <div className="col-2 temperature-info">
+                        <h4>Mean temperature from minimal recorded temperatures<br/></h4>
                         <p>{Number(minMean).toFixed(0)} °C</p>
                         
                     </div>
-                    <div className="col-1 temperature-info">
-                        Średnia z najwyższych temperatur
+                    <div className="col-2 temperature-info">
+                        <h4>Mean temperature from maximal recorded temperatures</h4>
                         <p>{Number(maxMean).toFixed(0)} °C</p>
                         
                     </div>

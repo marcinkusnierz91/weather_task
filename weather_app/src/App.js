@@ -21,13 +21,13 @@ class App extends Component {
 
   getWeather = () => {
 
-    const country = this.state.country
-    const city = this.state.city
+    const country = this.state.country.toLowerCase();
+    const city = this.state.city.toLowerCase();
     const Api_Key = 'de416f49eb5606fc2bd42745257f6961'
 
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${Api_Key}&units=metric&cnt=5`)
     .then(response => response.json())
-    // .then(json => console.log(json.list[1]))
+    // .then(json => console.log(json))
     .then(json => json.list)
     .then(list => this.setState({
       temperature: list,
@@ -58,27 +58,27 @@ class App extends Component {
       <div className='grid-container'>
         <div className="row title-row">
             <div className="col-10 title-col">
-              <h1>Prognoza pogody</h1>
+              <h1>5 Days weather forecast</h1>
             </div>
           </div>
 
           <div className="row form-row">
             <div className="col-10 form-col">
               <form onSubmit={this.handleOnSubmit}>
-                <label> Podaj nazwę miasta 
+                <label> City 
                   <input type="text" value={this.state.city} onChange={this.handleChange1} name='city'/>
                 </label><br/>
-                <label > Podaj nazwę państwa 
+                <label > Country code (eg. UK) 
                   <input type="text" value={this.state.country} onChange={this.handleChange2} name='country'/>
                 </label>
-                <br/><input type="submit" value='Szukaj' className='btn'/>
+                <br/><input type="submit" value='Search' className='btn'/>
               </form>
             </div>
           </div>
 
           <div className="row temperature-data__row">
             <div className="col-10 temperature-data__col">
-              {this.state.temperature ? <Weather temperature={this.state.temperature} /> : 'Ładowanie'}
+              {this.state.temperature ? <Weather temperature={this.state.temperature} /> : <p>Please select location</p>}
             </div>
             
           </div>

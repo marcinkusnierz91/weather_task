@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
 .grid-container {
     font-family: 'Open Sans', sans-serif;
@@ -6,6 +6,7 @@
     background-image: url(../img/sky-690293_1920.jpg);
     .title-row {
         .title-col {
+            margin-top:20px;
             display: flex;
             justify-content: center;
             color: #eeeeee;
@@ -13,17 +14,54 @@
     }
 
     .temperature-data__row {
+        
         .temperature-data__col{
+            
             display: flex;
             justify-content: center;
+            
+            p {
+                color: #0c3043;
+                font-size: 22px;
+            }
             .temperature-info {
+                margin-top:20px;
+                color: #0c3043;
                 display: flex;
                 flex-direction: column;
+                
                 align-items: center;
                 text-align: center;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 220px;
+                    height: 220px;;
+                    background-color: rgba(0,0,0, 0.2);
+                    top: -5px;
+                    border-radius: 5px;
+                }
+
+                h4 {
+                    display: inline-block;
+                    width: 190px;
+                    font-weight: 800;
+                }
+
                 p {
                     margin-top: 20px;
+                    color: #0c3043;
                 }
+
+                span {
+                    padding:5px;
+                }
+
+                &:nth-of-type(3), &:nth-of-type(4) {
+                    color: #0c3043;
+                }
+                
             }
         }
     }
@@ -36,6 +74,7 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
+                font-weight: 600;
             }
             input {
                 display: block;
@@ -44,6 +83,8 @@
                 background-color: grey;
                 height: 30px;
                 padding-left: 5px;
+                color: #eeeeee;
+                border-radius: 5px;
             }
             .btn {
                 background-color: grey;
@@ -53,7 +94,7 @@
                 padding:0;
                 color:#eeeeee;
                 font-size: 14px;
-                
+                border-radius: 5px;
                 
             }
         }
